@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Нятин Никита - О веб-разработке</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" type="text/css" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="{{ STATIC_URL }}js/html5shiv.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    {% for tag in tag_list %}
+                        <li><a href="{% url "tag_article_list" tag=tag.tag_url %}">{{ tag.tag_rus }}</a></li>
+                    {% empty %}
+                        <li><a href="">Нет категорий</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        <div class="well">
+            <p>&copy {% now "Y" %} Никита Нятин. Все права защищены</p>
+        </div>
+    </div>
+</body>
+</html>
