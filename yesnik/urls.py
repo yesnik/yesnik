@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'yesnik.views.home', name='home'),
     # url(r'^yesnik/', include('yesnik.foo.urls')),
 
-    url(r'^article/', include('article.urls')),
+    url(r'', include('article.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
