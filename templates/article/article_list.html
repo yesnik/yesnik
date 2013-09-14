@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Список статей</h1>
+    <h2>Статьи</h2>
     <ul>
     {% for article in article_list %}
         <li><a href="{% url 'article_detail' pk=article.id %}">{{ article.title }}</a></li>

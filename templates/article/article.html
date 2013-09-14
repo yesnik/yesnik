@@ -1,7 +1,32 @@
 ﻿{% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{ article.title }}</h1>
-    <p>{{ article.published }}</p>
-    <p>{{ article.content }}</p>
+    <!-- begin article -->
+  <article class="post hentry format-standard">
+  	<header class="entry-header">
+		<h2 class="entry-title">{{ article.title }}</h2>
+		<div class="entry-meta">
+      		<div class="entry-format">
+        		<span class="standard-format">standard</span>
+        	</div>
+      		<span class="sep"> | </span>
+      		<a href="#"><time class="entry-date">{{ article.published }}</time></a>
+      		<span class="sep"> | </span>	
+      		<span class="cat-links"> <a href="#">Article</a></span>
+      		<span class="sep"> | </span>
+      		<div class="comments-link">
+	        	<a href="#">1 Comment</a>
+	        </div>
+     	</div>
+    	<!-- .entry-meta -->
+    </header>
+    <!-- .entry-header -->
+    
+    <div class="entry-content">
+        <p>{{ article.content }}</p>
+ 	</div>
+    <!-- .entry-content -->
+    
+  </article>
+  <!-- end article -->
 {% endblock %}

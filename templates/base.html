@@ -1,41 +1,185 @@
-<!doctype html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Нятин Никита - О веб-разработке</title>
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" type="text/css" />
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="{{ STATIC_URL }}js/html5shiv.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Никита Нятин о веб-разработке</title>
+<link rel="shortcut icon" href="{{ STATIC_URL }}style/images/favicon.png"/>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style/main_style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style/css/view.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style/type/marketdeco.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style/type/merriweather.css" media="all" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style/css/queries.css" media="all" />
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style/css/ie8.css" media="all" />
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style/css/ie9.css" media="all" />
+<![endif]-->
+<script type="text/javascript" src="{{ STATIC_URL }}style/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}style/js/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}style/js/html5.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}style/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}style/js/selectnav.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}style/js/twitter.min.js"></script>
 </head>
+
 <body>
-    
-    <div class="container">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <ul class="nav">
-                    {% for tag in tag_list %}
-                        <li><a href="{% url "tag_article_list" tag=tag.tag_url %}">{{ tag.tag_rus }}</a></li>
-                    {% empty %}
-                        <li><a href="">Нет категорий</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        <div>
-            {% block content %}
-
-            {% endblock %}
-        </div>
-
-        <div class="well">
-            <p>&copy {% now "Y" %} Никита Нятин. Все права защищены</p>
-        </div>
+<div id="page" class="hfeed">
+<div id="wrapper">
+<header id="branding" role="banner">
+  <h1 id="site-title"> 
+  	<a href="/" title="На главную" rel="home">
+    		<img src="{{ STATIC_URL }}style/images/yesnik-logo.jpg" alt="Yesnik.ru logo" />
+    </a> 
+  </h1>
+  <div class="social">
+    <div class="widget_search">
+      <form method="get" class="search-form">
+        <input type="submit" value="search" class="search-submit-button" />
+        <input type="text" value="Поик" onfocus="this.value=''" onblur="this.value='Поиск'" name="s" class="search-text-box" />
+      </form> 
     </div>
+  </div>
+  
+  <nav id="access" class="access" role="navigation">
+        <div id="menu" class="menu">
+        	<ul id="tiny">
+            
+                {% for tag in tag_list %}
+                    <li><a href="{% url "tag_article_list" tag=tag.tag_url %}">
+                        {{ tag.tag_rus }}
+                        </a>
+                    </li>
+                {% empty %}
+                    <li><a href="">Нет категорий</a></li>
+                {% endfor %}
+                
+				<li><a href="#">Портфолио</a></li>
+				<li><a href="#">Обо мне</a></li>
+				<li><a href="#">Контакты</a></li>
+			</ul>
+		</div>
+		<div class="triangle-l"></div>
+		<div class="triangle-r"></div>
+  </nav>
+  <!-- #access --> 
+</header>
+<!-- #branding -->
+
+<div id="main">
+
+<div id="primary">
+  <div id="content" role="main">
+
+  {% block content %}
+  <!-- begin article -->
+  <article class="post hentry format-standard">
+  	<header class="entry-header">
+		<h2 class="entry-title"><a href="post.html">Этот прекрасный Python </a></h2>
+		<div class="entry-meta">
+      		<div class="entry-format">
+        		<span class="standard-format">standard</span>
+        	</div>
+      		<span class="sep"> | </span>
+      		<a href="#"><time class="entry-date">May 21, 2013</time></a>
+      		<span class="sep"> | </span>	
+      		<span class="cat-links"> <a href="#">Article</a></span>
+      		<span class="sep"> | </span>
+      		<div class="comments-link">
+	        	<a href="#">1 Comment</a>
+	        </div>
+     	</div>
+    	<!-- .entry-meta -->
+    </header>
+    <!-- .entry-header -->
+    
+    <div class="entry-content">
+      <p>Питон рулит! Это точно! О важности питона для веб-разработки можно говорить бесконечно. 
+      Питон рулит! Это точно! О важности питона для веб-разработки можно говорить бесконечно.
+      Питон рулит! Это точно! О важности питона для веб-разработки можно говорить бесконечно.
+      Питон рулит! Это точно! О важности питона для веб-разработки можно говорить бесконечно.
+      Питон рулит! Это точно! О важности питона для веб-разработки можно говорить бесконечно.
+      Питон рулит! Это точно! О важности питона для веб-разработки можно говорить бесконечно.</p>
+
+ 	</div>
+    <!-- .entry-content -->
+    
+  </article>
+  <!-- end article -->
+  {% endblock %}
+  
+  		<nav id="nav-fixed">
+			<div class="nav-previous"><a href="#" title="Older posts"><span class="meta-nav-prev">&larr;  Older posts</span></a></div>
+			<div class="nav-next"><a href="#" title="Newer posts"><span class="meta-nav-next">Newer posts &rarr;</span></a></div>
+		</nav><!-- #nav-above -->
+	   
+	<div class="clear"></div> 
+
+  
+  </div><!-- #content -->
+</div><!-- #primary -->
+
+
+</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+		<div id="supplementary" class="four">
+			<div id="first" class="widget-area" role="complementary">
+
+				<aside class="widget">
+					<h5 class="widget-title">Полезное</h5>		
+						<ul>
+							<li><a href="http://djangosimple.blogspot.ru/" title="Блог о разработке Django">djangosimple.blogspot.ru</a></li>
+							<li><a href="http://djbook.ru/" title="Джанго по-русски">djbook.ru</a></li>
+						</ul>
+				</aside>
+			</div><!-- #first .widget-area -->
+	
+			<div id="second" class="widget-area" role="complementary">
+				<aside class="widget">
+					<h5 class="widget-title">Twitter</h5>
+					<div id="twitter-wrapper">
+						<div id="twitter"></div>
+						<span class="username"><a href="http://twitter.com/yesnikita">Follow @yesnikita</a></span>
+					</div>
+				</aside>	
+			</div><!-- #second .widget-area -->
+	
+			<div id="third" class="widget-area" role="complementary">
+				<aside class="widget">
+					<h5 class="widget-title">Tags</h5>
+						<div class="tagcloud">
+						<a href='#' class='tag-link-33' title='4 topics' style='font-size: 13pt;'>vision</a>
+						<a href='#' class='tag-link-32' title='1 topic' style='font-size: 8pt;'>php</a>
+						<a href='#' class='tag-link-28' title='1 topic' style='font-size: 8pt;'>python</a>
+						<a href='#' class='tag-link-27' title='1 topic' style='font-size: 8pt;'>jquery</a>
+						<a href='#' class='tag-link-36' title='1 topic' style='font-size: 8pt;'>uability</a>
+						<a href='#' class='tag-link-26' title='2 topics' style='font-size: 13.25pt;'>professional</a>
+						
+				</aside>
+	
+			</div><!-- #third .widget-area -->
+		
+			<div id="fourth" class="widget-area" role="complementary">
+				<aside class="widget">
+					<h5 class="widget-title">About</h5>			
+					<div class="textwidget">
+                        <p>Привет, дорогие друзья! Пред вами программист, юзабилист в одном лице.
+                        Я твердо убежден в том, что код должен быть чистым, интерфейсы удобными,
+                        а люди счастливыми.</p>
+					</div>
+				</aside>
+			</div><!-- #third .widget-area -->
+		</div><!-- #supplementary -->
+		<div id="site-generator">
+			&copy; {% now "Y" %} Nikita Nyatin, powered by Django
+		</div>
+
+	</footer><!-- #colophon -->
+	</div><!-- #wrapper -->
+</div><!-- #page -->
+
+<script type="text/javascript" src="{{ STATIC_URL }}style/js/scripts.js"></script>
 </body>
 </html>
